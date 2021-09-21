@@ -5,34 +5,38 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        int a;
-        int count = 0;
         Scanner input = new Scanner(System.in);
-        //taking a value from user
-        System.out.println("Enter 'a' value ( from 1 to 9 numbers) : ");
-        a = input.nextInt();
-        //printing input value
-        System.out.println("input a = " + a);
-        //for loop for printing odd numbers
-        for (int i = 0; i < 100; i++) {
-            //condition for checking odd number or not
-            if (i % 2 != 0) {
-                count++;
-                //printing "output" String once and first odd number
-                if (count == 1) {
-                    System.out.print("output : ");
-                    System.out.print(i);
-                    // printing from 2nd odd value
-                } else if (count >= 2) {
-                    System.out.print(", " + i);
-                }
-            }
-            //breaking loop when a == count
-            if (a == count) {
+
+        String operator;
+        //taking type of operation from user
+        System.out.println("Enter the 'type of operation' [ +, -, *, / ]");
+        operator = input.nextLine();
+        double a, b;
+        //taking 'a' value from user
+        System.out.println("Enter 'a' value : ");
+        a = input.nextDouble();
+        //taking 'b' value from user
+        System.out.println("Enter 'b' value : ");
+        b = input.nextDouble();
+        //checking operator using switch
+        switch (operator) {
+            case "+":
+                System.out.println("Addition : " + a + " + " + b + " = " + (a + b));
                 break;
-            }
-
+            case "-":
+                System.out.println("Subtraction : " + a + " - " + b + " = " + (a - b));
+                break;
+            case "*":
+                System.out.println("Multiplication : " + a + " * " + b + " = " + (a * b));
+                break;
+            case "/":
+                System.out.println("Division : " + a + " / " + b + " = " + (a / b));
+                break;
+            default:
+                System.out.println("Invalid value.");
         }
-    }
-}
 
+
+    }
+
+}
