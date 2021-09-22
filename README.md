@@ -2,5 +2,4 @@
 Hi, i'm Suresh V
 taking this test in java programming
 
-NOTE:
-Using Intellij  IDE
+
